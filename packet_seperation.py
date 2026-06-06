@@ -278,6 +278,14 @@ report_df = report_df.sort_values(
     by="Serial Number"
 )
 
+# --------------------------------------------------
+# SAVE REPORT IN DOWNLOADS FOLDER
+# --------------------------------------------------
+downloads_folder = os.path.join(
+    os.path.expanduser("~"),
+    "Downloads"
+)
+
 report_file = (
     f"L&T_Communication_Report_{today}.xlsx"
 )
@@ -291,10 +299,14 @@ print("\n")
 print("=" * 70)
 print("L&T COMMUNICATION REPORT GENERATED")
 print("=" * 70)
+
 print(f"Report File : {report_file}")
 print(f"Total Devices : {len(report_df)}")
-print("=" * 70)
 
+print("\nReport Saved At:")
+print(os.path.abspath(report_file))
+
+print("=" * 70)
 # --------------------------------------------------
 # SEARCH MODE
 # --------------------------------------------------
