@@ -37,9 +37,11 @@ and generates:
 
   * ON
   * COMPLETED
+  * FAIL
   * SKIP
-* Actual Start Time (AST)
-* Actual Run Time (ART)
+* Valve Start Time
+* Configured Run Timer
+* Valve Run Timer
 
 ### Search Mode
 
@@ -59,8 +61,9 @@ Search by Serial Number:
 Search by Serial Number:
 
 * Valve 1–8 Status
-* AST
-* ART
+* Valve Start Time
+* Configured Run Timer
+* Valve Run Timer
 
 ---
 
@@ -92,7 +95,9 @@ Header Row: 4
 
 Packet Example:
 
+```text
 ##,2f991702-a780-43af-a095-92eb5bf7dcc8,0,1780217335,...,[3-1-02:00-01:47-07:00],...,1,...
+```
 
 ---
 
@@ -102,7 +107,9 @@ Packet Example:
 
 The tool extracts Device ID from:
 
+```python
 fields[1]
+```
 
 instead of the Communication Log DEVICE ID column.
 
@@ -110,7 +117,9 @@ instead of the Communication Log DEVICE ID column.
 
 The communication flag is extracted from:
 
+```python
 fields[-5]
+```
 
 Values:
 
@@ -121,15 +130,26 @@ Values:
 
 Example:
 
+```text
 3-1-02:00-01:47-07:00
+```
 
 Meaning:
 
-* Valve Number = 3
-* Valve Status = 1
-* Actual Run Time = 02:00
-* Set Time = 01:47
-* Actual Start Time = 07:00
+| Position | Description          |
+| -------- | -------------------- |
+| 1        | Valve Number         |
+| 2        | Valve Status         |
+| 3        | Configured Run Timer |
+| 4        | Valve Run Timer      |
+| 5        | Valve Start Time     |
+
+### Valve Status Logic
+
+* ON → Valve Status = 1
+* COMPLETED → Configured Run Timer = Valve Run Timer
+* FAIL → Configured Run Timer ≠ Valve Run Timer
+* SKIP → Valve not available for the selected day
 
 ---
 
@@ -139,13 +159,19 @@ Meaning:
 
 File Name:
 
+```text
 L&T_Communication_Report_YYYY-MM-DD.xlsx
+```
 
 ### Valve Report
 
 File Name:
 
+```text
 YYYY-MM-DD_Valve_Report.xlsx
+```
+
+Valve Report is generated only for OMS devices.
 
 ---
 
@@ -153,13 +179,17 @@ YYYY-MM-DD_Valve_Report.xlsx
 
 Install dependencies:
 
+```bash
 pip install pandas openpyxl
+```
 
 ---
 
 ## Run
 
-python OMS_Valve_Communication_Report_Generator_v3.py
+```bash
+python OMS_Valve_Communication_Report_Generator_v4.py
+```
 
 ---
 
