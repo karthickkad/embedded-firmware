@@ -1,2 +1,6 @@
 pandas
 openpyxl
+os
+re
+tkinter 
+Tk, filedialog
