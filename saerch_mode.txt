@@ -1,0 +1,115 @@
+Microsoft Windows [Version 10.0.26200.8524]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\embedded firmware>python OMS_Valve_Communication_Report_Generator_v4.py
+----------------------------------------------------------------------
+SELECT MASTER SHEET
+----------------------------------------------------------------------
+C:/embedded firmware/commmunication table .xlsx
+Loaded: 0ca8bb13-cd30-4596-81af-53e14ab9e151-1781993270.xlsx
+
+Total Records Loaded: 17904
+
+----------------------------------------------------------------------
+REPORT GENERATED SUCCESSFULLY
+----------------------------------------------------------------------
+C:\embedded firmware\2026-06-20_communication.xlsx
+C:\embedded firmware\2026-06-20_Valve_Report.xlsx
+
+------------------------------------------------------------------------------------------
+ENTERED TO SEARCH MODE
+------------------------------------------------------------------------------------------
+1. Communication Report
+2. Valve Report
+3. Exit
+
+Enter Choice : 1
+
+Enter Serial Number : OMSXSAM013
+
+------------------------------------------------------------------------------------------
+DEVICE COMMUNICATION REPORT
+------------------------------------------------------------------------------------------
+Report Date                    : 2026-06-20
+Serial Number                  : OMSXSAM013
+Device ID                      : 6c6bb9bc-8644-43d7-816e-1e9663bac7af
+Total Packets                  : 715
+Communication Count            : 707
+No Communication Count         : 8
+Communication %                : 98.88
+No Communication %             : 1.12
+------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------
+ENTERED TO SEARCH MODE
+------------------------------------------------------------------------------------------
+1. Communication Report
+2. Valve Report
+3. Exit
+
+Enter Choice : 2
+
+Enter Serial Number : OMSXSAM014
+
+------------------------------------------------------------------------------------------
+DEVICE VALVE REPORT
+------------------------------------------------------------------------------------------
+
+Valve 1
+Status : COMPLETED
+Valve Start Time : 10:00
+Configured Run timer : 02:00
+Valve Run Timer : 02:00
+
+Valve 2
+Status : COMPLETED
+Valve Start Time : 12:00
+Configured Run timer : 02:00
+Valve Run Timer : 02:00
+
+Valve 3
+Status : COMPLETED
+Valve Start Time : 14:00
+Configured Run timer : 01:00
+Valve Run Timer : 01:00
+
+Valve 4
+Status : COMPLETED
+Valve Start Time : 15:00
+Configured Run timer : 06:00
+Valve Run Timer : 06:00
+
+Valve 5
+Status : COMPLETED
+Valve Start Time : 10:00
+Configured Run timer : 02:00
+Valve Run Timer : 02:00
+
+Valve 6
+Status : COMPLETED
+Valve Start Time : 12:00
+Configured Run timer : 02:00
+Valve Run Timer : 02:00
+
+Valve 7
+Status : COMPLETED
+Valve Start Time : 14:00
+Configured Run timer : 01:00
+Valve Run Timer : 01:00
+
+Valve 8
+Status : COMPLETED
+Valve Start Time : 15:00
+Configured Run timer : 06:00
+Valve Run Timer : 06:00
+------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------
+ENTERED TO SEARCH MODE
+------------------------------------------------------------------------------------------
+1. Communication Report
+2. Valve Report
+3. Exit
+
+Enter Choice : 3
+Program Closed
