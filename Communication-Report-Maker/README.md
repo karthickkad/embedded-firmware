@@ -1,102 +1,167 @@
-# Communication Report Maker
+# OMS Communication & Valve Report Generator
 
 ## Overview
 
-Communication Report Maker is a Python application that analyzes OMSX and AMSX communication logs and generates a communication summary report for all devices found in the uploaded log files.
+OMS Communication & Valve Report Generator is a Python-based automation tool used to analyze OMS communication logs and generate detailed reports for device communication status and valve operation status.
 
-The tool matches Device IDs from communication packets with Serial Numbers from the Master Sheet and generates an Excel report containing communication statistics.
+The tool reads:
+
+* Master Sheet (Device Mapping)
+* Communication Log Excel Files (up to 5 files)
+
+and generates:
+
+1. Communication Report
+2. Valve Report
+
+---
 
 ## Features
 
-* Upload Master Sheet Excel file
-* Upload up to 5 Communication Log Excel files
-* Supports:
+### Communication Report
 
-  * MOTOR_STATUS (OMSX)
-  * ENVIRONMENT_NODE_STATUS (AMSX)
-* Extracts Device ID directly from packet data
-* Calculates:
+* Device ID to Serial Number Mapping
+* Total Packets Count
+* Communication Count
+* No Communication Count
+* Communication Percentage
+* No Communication Percentage
+* Supports multiple communication log files
 
-  * Total Packets
-  * Communication Count
-  * No Communication Count
-  * Communication Percentage
-  * No Communication Percentage
-* Generates dated Excel reports
-* Search devices using Serial Number
-* Displays communication statistics in console
+### Valve Report
 
-## Installation
+* OMS Devices Only
+* Channel 1 (Valve 1–4)
+* Channel 2 (Valve 5–8)
+* Valve Status
 
-```bash
-pip install pandas openpyxl
-```
+  * ON
+  * COMPLETED
+  * SKIP
+* Actual Start Time (AST)
+* Actual Run Time (ART)
 
-## Run
+### Search Mode
 
-```bash
-python packet_seperation.py
-```
+#### Communication Search
 
-## Generated Report
-
-```text
-Communication_Report_YYYY-MM-DD.xlsx
-```
-
-Example:
-
-```text
-Communication_Report_2026-06-07.xlsx
-```
-
-## Report Columns
+Search by Serial Number:
 
 * Report Date
-* Serial Number
-* Device Type
 * Device ID
 * Total Packets
 * Communication Count
 * No Communication Count
-* Communication %
-* No Communication %
+* Communication Percentage
 
-## Supported Device Types
+#### Valve Search
 
-### OMSX
+Search by Serial Number:
 
-```text
-MOTOR_STATUS
-```
+* Valve 1–8 Status
+* AST
+* ART
 
-### AMSX
+---
 
-```text
-ENVIRONMENT_NODE_STATUS
-```
+## Input Files
 
-## Communication Status
+### Master Sheet
 
-```text
-1 = Communication Available
-0 = No Communication
-```
+Required Columns:
 
-## Workflow
+| SERIAL .NO | DEVICE ID |
+| ---------- | --------- |
 
-1. Upload Master Sheet
-2. Upload up to 5 Communication Log files
-3. Generate Communication Report
-4. Search using Serial Number
-5. View device communication statistics
-6. Export results to Excel
+Example:
 
-## Output File
+| SERIAL .NO | DEVICE ID                            |
+| ---------- | ------------------------------------ |
+| OMSXSAM021 | 0ca8bb13-cd30-4596-81af-53e14ab9e151 |
 
-```text
-Communication_Report_YYYY-MM-DD.xlsx
-```
+---
+
+### Communication Log
+
+Required Columns:
+
+| DATE-TIME | DEVICE ID | REFERENCE TYPE | MESSAGE |
+| --------- | --------- | -------------- | ------- |
+
+Header Row: 4
+
+Packet Example:
+
+##,2f991702-a780-43af-a095-92eb5bf7dcc8,0,1780217335,...,[3-1-02:00-01:47-07:00],...,1,...
+
+---
+
+## Packet Parsing
+
+### Device ID
+
+The tool extracts Device ID from:
+
+fields[1]
+
+instead of the Communication Log DEVICE ID column.
+
+### Communication Status
+
+The communication flag is extracted from:
+
+fields[-5]
+
+Values:
+
+* 1 = Communication
+* 0 = No Communication
+
+### Valve Format
+
+Example:
+
+3-1-02:00-01:47-07:00
+
+Meaning:
+
+* Valve Number = 3
+* Valve Status = 1
+* Actual Run Time = 02:00
+* Set Time = 01:47
+* Actual Start Time = 07:00
+
+---
+
+## Generated Reports
+
+### Communication Report
+
+File Name:
+
+L&T_Communication_Report_YYYY-MM-DD.xlsx
+
+### Valve Report
+
+File Name:
+
+YYYY-MM-DD_Valve_Report.xlsx
+
+---
+
+## Requirements
+
+Install dependencies:
+
+pip install pandas openpyxl
+
+---
+
+## Run
+
+python OMS_Valve_Communication_Report_Generator_v3.py
+
+---
 
 ## Author
 
