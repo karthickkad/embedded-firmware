@@ -1,0 +1,221 @@
+ & 'c:\Users\91917\AppData\Local\Microsoft\WindowsApps\python3.11.exe' 'c:\Users\91917\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\launcher' '61725' '--' 'C:\embedded firmware\OMS_Valve_Communication_Report_Generator_v5.py' 
+bs\debugpy\launcher' '61725' '--' 'C:\embedded firmware\OMS_Valve_Communication_Report_Generator_v5.py' 
+
+======================================================================
+OMS VALVE & COMMUNICATION REPORT GENERATOR
+======================================================================
+1. Select Files and Generate Report
+2. Exit Program
+
+Enter Choice : 1
+----------------------------------------------------------------------
+SELECT MASTER SHEET
+----------------------------------------------------------------------
+C:/embedded firmware/version_5/updated commmunication table.xlsx
+
+----------------------------------------------------------------------
+SELECT COMMUNICATION LOG FILES
+----------------------------------------------------------------------
+
+Select Communication Log File 1
+Added : 0ca8bb13-cd30-4596-81af-53e14ab9e151-1782560600.xlsx
+
+Press Enter to select another file or E to start processing: 
+
+Select Communication Log File 2
+Added : 064017be-a125-43c8-8260-90fdc02a020e-1782543916.xlsx
+
+Press Enter to select another file or E to start processing: 
+
+Select Communication Log File 3
+No file selected.
+
+Press Enter to select another file or E to start processing: E
+
+Loading Master Sheet...
+Master Sheet Loaded : 62 Devices
+
+======================================================================
+LOADING COMMUNICATION LOG FILES
+======================================================================
+
+[1/2] Reading : 0ca8bb13-cd30-4596-81af-53e14ab9e151-1782560600.xlsx
+Loaded Records : 17925
+
+[2/2] Reading : 064017be-a125-43c8-8260-90fdc02a020e-1782543916.xlsx
+Loaded Records : 17932
+
+----------------------------------------------------------------------
+Total Records Loaded     : 35857
+Duplicate Records Removed: 0
+Final Records            : 35857
+----------------------------------------------------------------------
+
+======================================================================
+PROCESSING COMMUNICATION PACKETS
+======================================================================
+
+----------------------------------------------------------------------
+Processed Packets : 35857
+Unknown Devices   : 0
+Invalid Packets   : 0
+OMS Devices       : 42
+Total Devices     : 62
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+REPORT GENERATED SUCCESSFULLY
+
+SUMMARY
+----------------------------------------
+Master Devices      : 62
+Communication Nodes : 62
+OMS Devices         : 42
+AMS Devices         : 20
+Processed Packets   : 35857
+Unknown Devices     : 0
+Invalid Packets     : 0
+----------------------------------------
+----------------------------------------------------------------------
+C:\embedded firmware\26-06-2026_communication.xlsx
+C:\embedded firmware\26-06-2026_Valve_Report.xlsx
+
+----------------------------------------------------------------------
+Processing Time : 13.79 Seconds
+----------------------------------------------------------------------
+
+==========================================================================================
+SEARCH MODE
+==========================================================================================
+1. Communication Report
+2. Valve Report
+3. Generate New Report
+4. Exit Program
+
+Enter Choice : 1
+
+Enter Serial Number (B/3 = Back): OMSXSAM021
+
+--------------------------------------------------------------------------------
+DEVICE COMMUNICATION REPORT
+--------------------------------------------------------------------------------
+Device ID                     : 0CA8BB13-CD30-4596-81AF-53E14AB9E151
+Report Date                   : 26-06-2026
+Serial Number                 : OMSXSAM021
+Total Packets                 : 719
+Communication Count           : 719
+No Communication Count        : 0
+Communication %               : 100.0
+No Communication %            : 0.0
+
+Enter Serial Number (B/3 = Back): B
+
+==========================================================================================
+SEARCH MODE
+==========================================================================================
+1. Communication Report
+2. Valve Report
+3. Generate New Report
+4. Exit Program
+
+Enter Choice : 2
+
+Enter Serial Number (B/3 = Back): OMSXSAM024
+
+Serial Number Not Found
+
+Enter Serial Number (B/3 = Back): OMSXSAM010
+
+Serial Number Not Found
+
+Enter Serial Number (B/3 = Back): OMSX002452
+
+Serial Number Not Found
+
+Enter Serial Number (B/3 = Back): OMSX002451
+
+================================================================================
+DEVICE VALVE REPORT : OMSX002451
+================================================================================
+Device ID            : E622F7AB-1FE1-4AC5-B74C-D423CFD3ACF5
+================================================================================
+
+Valve 1
+----------------------------------------
+Status               : COMPLETED
+Valve Start Time     : 10:00
+Configured Run Timer : 02:00
+Valve Run Timer      : 02:00
+
+Valve 2
+----------------------------------------
+Status               : COMPLETED
+Valve Start Time     : 12:00
+Configured Run Timer : 02:00
+Valve Run Timer      : 02:00
+
+Valve 3
+----------------------------------------
+Status               : COMPLETED
+Valve Start Time     : 14:00
+Configured Run Timer : 01:00
+Valve Run Timer      : 01:00
+
+Valve 4
+----------------------------------------
+Status               : COMPLETED
+Valve Start Time     : 15:00
+Configured Run Timer : 06:00
+Valve Run Timer      : 06:00
+
+Valve 5
+----------------------------------------
+Status               : COMPLETED
+Valve Start Time     : 10:00
+Configured Run Timer : 02:00
+Valve Run Timer      : 02:00
+
+Valve 6
+----------------------------------------
+Status               : COMPLETED
+Valve Start Time     : 12:00
+Configured Run Timer : 02:00
+Valve Run Timer      : 02:00
+
+Valve 7
+----------------------------------------
+Status               : COMPLETED
+Valve Start Time     : 14:00
+Configured Run Timer : 01:00
+Valve Run Timer      : 01:00
+
+Valve 8
+----------------------------------------
+Status               : COMPLETED
+Valve Start Time     : 15:00
+Configured Run Timer : 06:00
+Valve Run Timer      : 06:00
+
+Enter Serial Number (B/3 = Back): B
+
+==========================================================================================
+SEARCH MODE
+==========================================================================================
+1. Communication Report
+2. Valve Report
+3. Generate New Report
+4. Exit Program
+
+Enter Choice : 3
+
+Returning to File Selection...
+
+
+======================================================================
+OMS VALVE & COMMUNICATION REPORT GENERATOR
+======================================================================
+1. Select Files and Generate Report
+2. Exit Program
+
+Enter Choice : 2
+Program Closed
